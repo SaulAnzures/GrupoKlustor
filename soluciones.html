@@ -282,8 +282,17 @@
                 <a href="soluciones.html" class="active">Soluciones</a>
                 <a href="index.html#contacto">Contacto</a>
             </div>
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
+    
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html#servicios">Servicios</a>
+        <a href="soluciones.html" class="active">Soluciones</a>
+        <a href="index.html#contacto">Contacto</a>
+    </div>
 
     <main>
         <section class="section hero-small dark">
@@ -550,6 +559,26 @@
                 "retina_detect": true
             }
         );
+
+        // Código para el menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+            });
+            
+            // Cerrar el menú al hacer clic en un enlace
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
+        });
     </script>
 </body>
 </html> 
