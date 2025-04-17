@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Soluciones de automatización, análisis de datos y transformación digital para empresas - Grupo Klustor. Casos de éxito y resultados medibles.">
+    <meta name="keywords" content="soluciones empresariales, automatización, análisis de datos, casos de éxito, transformación digital, Grupo Klustor">
+    <meta name="author" content="Grupo Klustor">
+    <meta property="og:title" content="Soluciones y Casos de Éxito - Grupo Klustor">
+    <meta property="og:description" content="Descubre cómo nuestras soluciones de automatización y análisis de datos pueden transformar tu negocio con resultados medibles.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.grupoklustor.com/soluciones.html">
+    <title>Soluciones - Grupo Klustor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Estilos mejorados para coincidir con la imagen de referencia */
+        body {
+            background-color: #0a0a1a !important;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .navbar {
+            background-color: rgba(10, 10, 25, 0.9) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .portfolio-item {
+            background: linear-gradient(145deg, #12122d, #0c0c23);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(72, 52, 212, 0.15);
+            height: 100%;
+        }
+
+        .portfolio-icon {
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            border-radius: 16px;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 20px rgba(72, 52, 212, 0.25);
+        }
+
+        .portfolio-icon i {
+            font-size: 32px;
+            color: white;
+        }
+
+        .portfolio-content {
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 25px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .portfolio-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(to right, #4834d4, #686de0);
+            border-radius: 3px;
+        }
+
+        .challenge, .solution, .results {
+            background: rgba(15, 15, 40, 0.7);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(72, 52, 212, 0.08);
+        }
+
+        .challenge h4, .solution h4, .results h4 {
+            color: #686de0 !important;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .challenge h4 i, .solution h4 i, .results h4 i {
+            margin-right: 10px;
+            color: #686de0;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .solution ul li {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .metrics-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .metric-box {
+            flex: 1;
+            min-width: 80px;
+            background: linear-gradient(145deg, rgba(10, 10, 35, 0.9), rgba(18, 18, 45, 0.8));
+            padding: 15px 10px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(104, 109, 224, 0.1);
+        }
+
+        .metric-value {
+            font-size: 1.4rem !important;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, #e0e0f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.85);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: block;
+        }
+
+        .solution h4, .challenge h4, .results h4 {
+            font-weight: 600;
+        }
+
+        .challenge p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        .section.dark {
+            background: linear-gradient(to bottom, rgba(10, 10, 30, 0.98), rgba(5, 5, 15, 0.98));
+            padding: 4rem 0;
+        }
+
+        .hero-small {
+            background: linear-gradient(to bottom, rgba(15, 15, 45, 0.95), rgba(10, 10, 30, 0.98));
+            min-height: 30vh;
+        }
+
+        .section h2 {
+            color: white !important;
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #a29bfe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section .quote {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(72, 52, 212, 0.2);
+            background: linear-gradient(135deg, #686de0, #4834d4);
+        }
+
+        .btn-primary i {
+            margin-right: 10px;
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 992px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-content h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Ajustes para la figura 1 que muestra */
+        .solution {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .results h4 {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .results h4::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(to right, #4834d4, #686de0);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-cube"></i>
+                Grupo Klustor
+            </a>
+            <div class="nav-links">
+                <a href="index.html#servicios">Servicios</a>
+                <a href="soluciones.html" class="active">Soluciones</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section hero-small dark">
+            <div class="container text-center">
+                <h1 class="page-title" data-aos="fade-up">Casos de Éxito</h1>
+                <div class="underline-accent" data-aos="fade-up" data-aos-delay="100"></div>
+                <p class="page-description" data-aos="fade-up" data-aos-delay="200">
+                    Descubre cómo hemos ayudado a empresas a transformar sus negocios
+                </p>
+            </div>
+        </section>
+
+        <section id="portafolio" class="section dark">
+            <div class="container">
+                <p class="section-description" data-aos="fade-up">Ejemplos de soluciones que podemos implementar para transformar su negocio</p>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-aos="fade-up">
+                        <div class="portfolio-content">
+                            <div class="portfolio-icon">
+                                <i class="fas fa-chart-bar"></i>
+                                <div class="icon-glow"></div>
+                            </div>
+                            <h3>Tableros de Control</h3>
+                            <div class="portfolio-details">
+                                <div class="challenge">
+                                    <h4><i class="fas fa-flag"></i> Desafío</h4>
+                                    <p>Datos críticos dispersos en múltiples sistemas sin posibilidad de análisis integral.</p>
+                                </div>
+                                <div class="solution">
+                                    <h4><i class="fas fa-lightbulb"></i> Solución</h4>
+                                    <ul>
+                                        <li>Dashboards interactivos en Power BI</li>
+                                        <li>Conexión a múltiples fuentes</li>
+                                        <li>Visualización de KPIs en tiempo real</li>
+                                    </ul>
+                                </div>
+                                <div class="results">
+                                    <h4><i class="fas fa-chart-line"></i> Resultados</h4>
+                                    <div class="metrics-row">
+                                        <div class="metric-box">
+                                            <span class="metric-value">85%</span>
+                                            <span class="metric-label">Reducción tiempo</span>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span class="metric-value">95%</span>
+                                            <span class="metric-label">Precisión</span>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span class="metric-value">40%</span>
+                                            <span class="metric-label">Mejor decisión</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="portfolio-content">
+                            <div class="portfolio-icon">
+                                <i class="fas fa-code"></i>
+                                <div class="icon-glow"></div>
+                            </div>
+                            <h3>Scripts Automatizados</h3>
+                            <div class="portfolio-details">
+                                <div class="challenge">
+                                    <h4><i class="fas fa-flag"></i> Desafío</h4>
+                                    <p>Procesos manuales repetitivos que consumían tiempo y generaban errores constantes.</p>
+                                </div>
+                                <div class="solution">
+                                    <h4><i class="fas fa-lightbulb"></i> Solución</h4>
+                                    <ul>
+                                        <li>Automatización con Python</li>
+                                        <li>Flujos ETL programados</li>
+                                        <li>Informes generados automáticamente</li>
+                                    </ul>
+                                </div>
+                                <div class="results">
+                                    <h4><i class="fas fa-chart-line"></i> Resultados</h4>
+                                    <div class="metrics-row">
+                                        <div class="metric-box">
+                                            <span class="metric-value">90%</span>
+                                            <span class="metric-label">Tiempo proceso</span>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span class="metric-value">99%</span>
+                                            <span class="metric-label">Precisión</span>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span class="metric-value">75%</span>
+                                            <span class="metric-label">Ahorro</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-content">
+                            <div class="portfolio-icon">
+                                <i class="fas fa-database"></i>
+                                <div class="icon-glow"></div>
+                            </div>
+                            <h3>Bases de Datos</h3>
+                            <div class="portfolio-details">
+                                <div class="challenge">
+                                    <h4><i class="fas fa-flag"></i> Desafío</h4>
+                                    <p>Sistemas legacy con datos no estructurados e inaccesibles para análisis efectivo.</p>
+                                </div>
+                                <div class="solution">
+                                    <h4><i class="fas fa-lightbulb"></i> Solución</h4>
+                                    <ul>
+                                        <li>Migración a cloud estructurado</li>
+                                        <li>Arquitectura data warehouse</li>
+                                        <li>Optimización de consultas SQL</li>
+                                    </ul>
+                                </div>
+                                <div class="results">
+                                    <h4><i class="fas fa-chart-line"></i> Resultados</h4>
+                                    <div class="metrics-row">
+                                        <div class="metric-box">
+                                            <span class="metric-value">60%</span>
+                                            <span class="metric-label">Rendimiento</span>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span class="metric-value">95%</span>
+                                            <span class="metric-label">Integridad</span>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span class="metric-value">85%</span>
+                                            <span class="metric-label">Consultas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>¿Listo para transformar tu negocio?</h2>
+                <p class="quote">Contáctanos para discutir cómo podemos ayudarte a alcanzar tus objetivos de negocio</p>
+                <div class="cta-buttons">
+                    <a href="index.html#contacto" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Solicitar consulta
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LOGRA TUS OBJETIVOS DE NEGOCIO</h3>
+                    <p>Acércate con nuestros asesores para resolver las necesidades de tu empresa</p>
+                    <a href="index.html#contacto" class="btn btn-outline">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        particlesJS('particles-js',
+            {
+                "particles": {
+                    "number": {
+                        "value": 60,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#4834d4"
+                    },
+                    "shape": {
+                        "type": "circle"
+                    },
+                    "opacity": {
+                        "value": 0.3,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 2,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#686de0",
+                        "opacity": 0.2,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "bubble"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "bubble": {
+                            "distance": 200,
+                            "size": 4,
+                            "duration": 2,
+                            "opacity": 0.4,
+                            "speed": 3
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        }
+                    }
+                },
+                "retina_detect": true
+            }
+        );
+    </script>
+</body>
+</html> 
