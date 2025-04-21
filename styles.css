@@ -2087,4 +2087,235 @@ footer {
     .floating-elements {
         display: none;
     }
-} 
+}
+
+/* Estilos para la página de servicios */
+.services-hero {
+    padding: 6rem 0 4rem;
+    position: relative;
+    text-align: center;
+}
+
+.service-progression {
+    margin-top: 4rem;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.progression-line {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: linear-gradient(90deg, #4834d4, #686de0);
+    z-index: 1;
+}
+
+.progression-steps {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2;
+}
+
+.step {
+    text-align: center;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #4834d4, #686de0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+    position: relative;
+}
+
+.service-cards {
+    padding: 4rem 0;
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4834d4, #686de0);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+}
+
+.service-icon i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.service-title h2 {
+    margin: 0;
+    color: #2d3436;
+    font-size: 1.5rem;
+}
+
+.service-subtitle {
+    color: #636e72;
+    margin: 0.5rem 0 0;
+}
+
+.service-objective {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.service-objective h3 {
+    color: #2d3436;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.service-objective h3 i {
+    margin-right: 0.5rem;
+    color: #4834d4;
+}
+
+.service-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.detail-column h4 {
+    color: #2d3436;
+    margin: 1.5rem 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.detail-column h4 i {
+    margin-right: 0.5rem;
+    color: #4834d4;
+}
+
+.detail-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.detail-column ul li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.tech-list li {
+    display: flex;
+    align-items: center;
+}
+
+.tech-list li i {
+    margin-right: 0.5rem;
+    color: #4834d4;
+    width: 20px;
+}
+
+.service-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.service-pricing {
+    text-align: right;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4834d4;
+    margin: 0.5rem 0;
+}
+
+.price-note {
+    color: #636e72;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #4834d4, #686de0);
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.cta-section h2 {
+    margin-bottom: 1rem;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .progression-line {
+        left: 10%;
+        right: 10%;
+    }
+
+    .service-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-icon {
+        margin: 0 auto 1rem;
+    }
+
+    .service-details {
+        grid-template-columns: 1fr;
+    }
+
+    .service-footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .service-pricing {
+        text-align: center;
+    }
+}

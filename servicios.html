@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Grupo Klustor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        body {
+            background-color: #0a0a1a !important;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: rgba(10, 10, 25, 0.95) !important;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .nav-links a {
+            color: #ffffff;
+        }
+
+        .navbar .nav-links a.active {
+            color: #686de0;
+        }
+
+        .logo {
+            color: #ffffff;
+        }
+
+        .hero {
+            min-height: 18vh;
+            background: linear-gradient(135deg, #181828 90%, #232347 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 90px;
+            padding-bottom: 20px;
+        }
+
+        .hero::before {
+            content: none;
+        }
+
+        .service-card {
+            background: rgba(30, 30, 60, 0.85);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(104, 109, 224, 0.18);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(40, 40, 80, 0.95);
+            border: 1.5px solid #686de0;
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(72,52,212,0.2);
+        }
+
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-title {
+            flex: 1;
+        }
+
+        .service-title h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .service-title .subtitle {
+            color: #a29bfe;
+        }
+
+        .service-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-box {
+            background: rgba(40, 40, 80, 0.7);
+            border: 1px solid rgba(104, 109, 224, 0.12);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            color: #fff;
+        }
+
+        .service-box:hover {
+            background: rgba(60, 60, 120, 0.85);
+            border-color: #686de0;
+        }
+
+        .service-box h3 {
+            color: #686de0;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-box h3 i {
+            font-size: 1rem;
+        }
+
+        .service-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-box li {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .service-box li i {
+            color: #686de0;
+            font-size: 1rem;
+            margin-top: 0.2rem;
+        }
+
+        .service-footer {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(72, 52, 212, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background: rgba(18, 18, 45, 0.7);
+            border-radius: 0 0 20px 20px;
+        }
+
+        .scope h4 {
+            color: #686de0;
+        }
+
+        .price-tag {
+            text-align: right;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #686de0;
+            display: block;
+            line-height: 1;
+        }
+
+        .price-note {
+            color: #a29bfe;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .service-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .service-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+
+            .service-footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .price-tag {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header class="hero">
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-cube"></i>
+                    Grupo Klustor
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Inicio</a>
+                    <a href="soluciones.html">Soluciones</a>
+                    <a href="#" class="active">Servicios</a>
+                    <a href="index.html#contacto">Contacto</a>
+                </div>
+                <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="services-hero section">
+            <div class="container">
+                <h1 class="gradient-text" data-aos="fade-up">Nuestros Servicios</h1>
+                <p class="subtitle" data-aos="fade-up" data-aos-delay="100">Soluciones efectivas para tu transformación digital</p>
+            </div>
+        </section>
+
+        <section class="service-cards section">
+            <div class="container">
+                <!-- Klustor Data Kick-Off -->
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="service-title">
+                            <h2>Klustor Data Kick-Off</h2>
+                            <p class="subtitle">Auditoría & Roadmap en ≤3 semanas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-content">
+                        <div class="service-box">
+                            <h3><i class="fas fa-bullseye"></i> Objetivo</h3>
+                            <p>Diagnóstico integral del estado actual de datos y plan de acción priorizado.</p>
+                            <h3><i class="fas fa-check-circle"></i> Incluye</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Mapa de sistemas y brechas de calidad</li>
+                                <li><i class="fas fa-check"></i> Quick-wins de alto ROI</li>
+                                <li><i class="fas fa-check"></i> Estimación de costos y ahorros</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-box">
+                            <h3><i class="fas fa-tasks"></i> Proceso</h3>
+                            <ul>
+                                <li><i class="fas fa-arrow-right"></i> Workshops con stakeholders</li>
+                                <li><i class="fas fa-arrow-right"></i> Perfilado de datos automatizado</li>
+                                <li><i class="fas fa-arrow-right"></i> Score de madurez y roadmap</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-footer">
+                        <div class="scope">
+                            <h4><i class="fas fa-expand-alt"></i> Alcance</h4>
+                            <p>Hasta 10 fuentes de datos para empresas de 5-20 empleados</p>
+                        </div>
+                        <div class="price-tag">
+                            <span class="price">USD 2-5k</span>
+                            <span class="price-note">100% bonificable en Servicio 2</span>
+                        </div>
+                    </div>
+                    <p style="margin-top:1.2rem;color:#a29bfe;font-size:1.05rem;text-align:center;font-weight:500;">Convierte tus datos en decisiones inteligentes y lleva a tu empresa al siguiente nivel desde el primer diagnóstico.</p>
+                </div>
+
+                <!-- Klustor Data Foundation -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="service-title">
+                            <h2>Klustor Data Foundation</h2>
+                            <p class="subtitle">Modern Data Stack en ≤8 semanas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-content">
+                        <div class="service-box">
+                            <h3><i class="fas fa-bullseye"></i> Solución</h3>
+                            <p>Infraestructura para ingesta, almacenamiento y transformación automática.</p>
+                            <h3><i class="fas fa-check-circle"></i> Beneficios</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Datos centralizados y gobernados</li>
+                                <li><i class="fas fa-check"></i> Costos cloud optimizados</li>
+                                <li><i class="fas fa-check"></i> Base para BI y modelos IA</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-box">
+                            <h3><i class="fas fa-tools"></i> Stack Tecnológico</h3>
+                            <ul>
+                                <li><i class="fab fa-google"></i> GCP (BigQuery, Storage)</li>
+                                <li><i class="fas fa-stream"></i> Airbyte Cloud</li>
+                                <li><i class="fas fa-code-branch"></i> dbt Cloud</li>
+                                <li><i class="fas fa-chart-bar"></i> Looker Studio</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-footer">
+                        <div class="scope">
+                            <h4><i class="fas fa-expand-alt"></i> Alcance</h4>
+                            <p>3 pipelines ETL + transformaciones dbt + catálogo</p>
+                        </div>
+                        <div class="price-tag">
+                            <span class="price">USD 8-15k</span>
+                            <span class="price-note">Incluye soporte de implementación</span>
+                        </div>
+                    </div>
+                    <p style="margin-top:1.2rem;color:#a29bfe;font-size:1.05rem;text-align:center;font-weight:500;">Construye una base tecnológica robusta y flexible para que tu negocio crezca sin límites y aproveche el poder de los datos.</p>
+                </div>
+
+                <!-- Klustor Data Flow Care -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="service-title">
+                            <h2>Klustor Data Flow Care</h2>
+                            <p class="subtitle">Soporte y Mejora Continua 24/5</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-content">
+                        <div class="service-box">
+                            <h3><i class="fas fa-bullseye"></i> Cobertura</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Monitoreo proactivo 24/5</li>
+                                <li><i class="fas fa-check"></i> Optimización de costos</li>
+                                <li><i class="fas fa-check"></i> Mejoras incrementales</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-box">
+                            <h3><i class="fas fa-chart-line"></i> SLAs</h3>
+                            <ul>
+                                <li><i class="fas fa-clock"></i> MTTR <4h</li>
+                                <li><i class="fas fa-server"></i> Uptime ≥99.5%</li>
+                                <li><i class="fas fa-calendar-check"></i> Review mensual</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-footer">
+                        <div class="scope">
+                            <h4><i class="fas fa-expand-alt"></i> Alcance</h4>
+                            <p>Hasta 10 conectores y 30 modelos dbt</p>
+                        </div>
+                        <div class="price-tag">
+                            <span class="price">USD 1-3k/mes</span>
+                            <span class="price-note">O paquetes de horas prepagadas</span>
+                        </div>
+                    </div>
+                    <p style="margin-top:1.2rem;color:#a29bfe;font-size:1.05rem;text-align:center;font-weight:500;">Asegura la continuidad, mejora y evolución de tus datos con un acompañamiento experto y proactivo.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LOGRA TUS OBJETIVOS DE NEGOCIO</h3>
+                    <p>Acércate con nuestros asesores para resolver las necesidades de tu empresa</p>
+                    <a href="index.html#contacto" class="btn btn-outline">Contactar</a>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>Grupo Klustor © 2025 / Derechos Reservados</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        particlesJS('particles-js',
+            {
+                "particles": {
+                    "number": {
+                        "value": 60,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#4834d4"
+                    },
+                    "shape": {
+                        "type": "circle"
+                    },
+                    "opacity": {
+                        "value": 0.3,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 2,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#686de0",
+                        "opacity": 0.2,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "bubble"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "bubble": {
+                            "distance": 200,
+                            "size": 4,
+                            "duration": 2,
+                            "opacity": 0.4,
+                            "speed": 3
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        }
+                    }
+                },
+                "retina_detect": true
+            }
+        );
+    </script>
+</body>
+</html>
