@@ -17,16 +17,16 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         body {
-            background-color: #232347 !important;
-            color: white;
+            background-color: var(--primary-color) !important;
+            color: var(--text-light);
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
         }
 
         .navbar {
-            background-color: rgba(10, 10, 25, 0.95) !important;
+            background: rgba(0, 31, 63, 0.98) !important;
             backdrop-filter: blur(15px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
         }
 
         .hero-small {
@@ -35,7 +35,7 @@
             align-items: center;
             position: relative;
             padding: 8rem 0 4rem;
-            background: linear-gradient(135deg, #232347 80%, #3a3a6a 100%);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             overflow: hidden;
         }
 
@@ -46,17 +46,14 @@
             right: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 70% 30%, rgba(72, 52, 212, 0.15), transparent 70%);
+            background: radial-gradient(circle at 70% 30%, rgba(0, 102, 204, 0.15), transparent 70%);
             pointer-events: none;
         }
 
         .page-title {
             font-size: 4rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff, #a29bfe);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-light);
             text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
             letter-spacing: -1px;
         }
@@ -65,7 +62,7 @@
             font-size: 1.4rem;
             max-width: 800px;
             margin: 0 auto;
-            color: rgba(255, 255, 255, 0.95);
+            color: var(--text-dark);
             line-height: 1.6;
             font-weight: 300;
         }
@@ -79,20 +76,20 @@
         }
 
         .portfolio-item {
-            background: linear-gradient(145deg, #2d2d5a 90%, #232347 100%);
+            background: linear-gradient(145deg, rgba(0, 31, 63, 0.9), rgba(0, 51, 102, 0.95));
             border-radius: 24px;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(72, 52, 212, 0.15);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--glass-border);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
 
         .portfolio-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(72, 52, 212, 0.2);
-            border-color: rgba(72, 52, 212, 0.3);
+            border-color: var(--highlight-color);
+            box-shadow: 0 15px 35px rgba(0, 31, 63, 0.3);
         }
 
         .portfolio-icon {
@@ -101,17 +98,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #4834d4, #686de0);
+            background: linear-gradient(135deg, var(--highlight-color), var(--highlight-hover-color));
             border-radius: 24px;
             margin: 0 auto 2rem;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(72, 52, 212, 0.35);
+            box-shadow: 0 15px 35px rgba(0, 102, 204, 0.35);
         }
 
         .portfolio-icon i {
             font-size: 3rem;
-            color: white;
+            color: var(--text-light);
             position: relative;
             z-index: 2;
             filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
@@ -124,7 +121,7 @@
 
         .portfolio-content h3 {
             font-size: 2.2rem;
-            color: white;
+            color: var(--text-light);
             margin-bottom: 2rem;
             font-weight: 700;
             line-height: 1.2;
@@ -141,29 +138,29 @@
             transform: translateX(-50%);
             width: 50px;
             height: 4px;
-            background: linear-gradient(to right, #4834d4, #686de0);
+            background: linear-gradient(to right, var(--highlight-color), var(--highlight-hover-color));
             border-radius: 4px;
         }
 
         .challenge, .solution, .results {
-            background: rgba(49, 49, 100, 0.85);
+            background: rgba(0, 31, 63, 0.3);
             padding: 2rem;
             border-radius: 16px;
             margin-bottom: 2rem;
-            border: 1px solid rgba(72, 52, 212, 0.08);
+            border: 1px solid var(--glass-border);
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
         }
 
         .challenge:hover, .solution:hover, .results:hover {
-            border-color: rgba(72, 52, 212, 0.2);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: var(--highlight-color);
+            background: rgba(0, 31, 63, 0.4);
             transform: translateY(-3px);
         }
 
         .challenge h4, .solution h4, .results h4 {
             font-size: 1.4rem;
-            color: #686de0;
+            color: var(--highlight-color);
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
@@ -175,10 +172,7 @@
         .challenge h4 i, .solution h4 i, .results h4 i {
             margin-right: 12px;
             font-size: 1.2rem;
-            background: linear-gradient(135deg, #4834d4, #686de0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--highlight-color);
         }
 
         .solution ul {
@@ -189,7 +183,7 @@
 
         .solution ul li {
             margin-bottom: 1rem;
-            color: rgba(255, 255, 255, 0.95);
+            color: var(--text-dark);
             font-size: 1.1rem;
             line-height: 1.5;
             display: flex;
@@ -199,14 +193,14 @@
 
         .solution ul li::before {
             content: '•';
-            color: #686de0;
+            color: var(--highlight-color);
             font-weight: bold;
             margin-right: 10px;
             font-size: 1.2rem;
         }
 
         .challenge p {
-            color: rgba(255, 255, 255, 0.95);
+            color: var(--text-dark);
             font-size: 1.1rem;
             margin: 0;
             line-height: 1.6;
@@ -215,49 +209,50 @@
         .metrics-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.2rem;
-            margin-top: 0.7rem;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
         .metric-box {
-            background: linear-gradient(145deg, #35356a 90%, #232347 100%);
-            padding: 0.4rem 0.1rem;
-            border-radius: 10px;
-            border: 1.5px solid rgba(104, 109, 224, 0.18);
+            background: linear-gradient(145deg, var(--card-bg), var(--glass-bg));
+            padding: 1rem 0.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 16px rgba(72, 52, 212, 0.08);
+            box-shadow: var(--shadow);
         }
 
         .metric-box:hover {
             transform: translateY(-5px);
-            border-color: rgba(104, 109, 224, 0.3);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: var(--highlight-color);
+            box-shadow: 0 10px 25px rgba(0, 31, 63, 0.3);
         }
 
         .metric-value {
-            font-size: 1.05rem !important;
+            font-size: 1.4rem !important;
             font-weight: 700;
-            margin-bottom: 0.05rem;
-            letter-spacing: -0.2px;
-            text-shadow: 0 1px 4px rgba(72, 52, 212, 0.10);
+            color: var(--highlight-color);
+            margin-bottom: 0.3rem;
+            line-height: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .metric-label {
-            font-size: 0.62rem;
-            color: #b2b8f7;
-            letter-spacing: 0.2px;
+            font-size: 0.75rem;
+            color: var(--text-dark);
+            letter-spacing: 0.5px;
             font-weight: 500;
-            line-height: 1.05;
+            line-height: 1.2;
         }
 
         .section.dark {
-            background: linear-gradient(to bottom, rgba(10, 10, 30, 0.98), rgba(5, 5, 15, 0.98));
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
             padding: 8rem 0;
         }
 
         .section-description {
             font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
             max-width: 900px;
             margin: 0 auto 3rem;
             text-align: center;
@@ -266,7 +261,7 @@
         }
 
         .cta-section {
-            background: linear-gradient(135deg, rgba(72, 52, 212, 0.1), rgba(104, 109, 224, 0.1));
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 77, 153, 0.1));
             padding: 6rem 0;
             text-align: center;
             position: relative;
@@ -280,13 +275,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, rgba(72, 52, 212, 0.1), transparent 70%);
+            background: radial-gradient(circle at center, rgba(0, 102, 204, 0.1), transparent 70%);
             pointer-events: none;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #4834d4, #686de0);
-            color: white;
+            background: linear-gradient(135deg, var(--highlight-color), var(--highlight-hover-color));
+            color: var(--text-light);
             border: none;
             padding: 1rem 2.5rem;
             border-radius: 50px;
@@ -297,23 +292,13 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            box-shadow: 0 10px 20px rgba(72, 52, 212, 0.2);
+            box-shadow: var(--shadow);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(72, 52, 212, 0.3);
-            background: linear-gradient(135deg, #686de0, #4834d4);
-        }
-
-        .btn-primary i {
-            margin-right: 12px;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-
-        .btn-primary:hover i {
-            transform: translateX(3px);
+            box-shadow: 0 15px 35px rgba(0, 31, 63, 0.3);
+            background: linear-gradient(135deg, var(--highlight-hover-color), var(--highlight-color));
         }
 
         @media (max-width: 1200px) {
@@ -402,9 +387,10 @@
                 Grupo Klustor
             </a>
             <div class="nav-links">
-                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html">Inicio</a>
+                <a href="servicios.html">Servicios</a>
                 <a href="soluciones.html" class="active">Soluciones</a>
-                <a href="index.html#contacto">Contacto</a>
+                <a href="contacto.html">Contacto</a>
             </div>
             <div class="mobile-menu-toggle" id="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -413,15 +399,16 @@
     </nav>
     
     <div class="mobile-menu" id="mobile-menu">
-        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
         <a href="soluciones.html" class="active">Soluciones</a>
-        <a href="index.html#contacto">Contacto</a>
+        <a href="contacto.html">Contacto</a>
     </div>
 
     <main>
         <section class="section hero-small dark">
             <div class="container text-center">
-                <h1 class="page-title" data-aos="fade-up">Casos de Éxito</h1>
+                <h1 class="page-title" data-aos="fade-up">Soluciones</h1>
                 <div class="underline-accent" data-aos="fade-up" data-aos-delay="100"></div>
                 <p class="page-description" data-aos="fade-up" data-aos-delay="200">
                     Descubre cómo hemos ayudado a empresas a transformar sus negocios
@@ -522,7 +509,7 @@
                                 <i class="fas fa-database"></i>
                                 <div class="icon-glow"></div>
                             </div>
-                            <h3>Bases de Datos</h3>
+                            <h3>Bases de<br>Datos</h3>
                             <div class="portfolio-details">
                                 <div class="challenge">
                                     <h4><i class="fas fa-flag"></i> Desafío</h4>
@@ -565,7 +552,7 @@
                 <h2>¿Listo para transformar tu negocio?</h2>
                 <p class="quote">Contáctanos para discutir cómo podemos ayudarte a alcanzar tus objetivos de negocio</p>
                 <div class="cta-buttons">
-                    <a href="index.html#contacto" class="btn btn-primary">
+                    <a href="contacto.html" class="btn btn-primary">
                         <i class="fas fa-rocket"></i>
                         Solicitar consulta
                     </a>
@@ -580,7 +567,7 @@
                 <div class="footer-section">
                     <h3>LOGRA TUS OBJETIVOS DE NEGOCIO</h3>
                     <p>Acércate con nuestros asesores para resolver las necesidades de tu empresa</p>
-                    <a href="index.html#contacto" class="btn btn-outline">Contactar</a>
+                    <a href="contacto.html" class="btn btn-outline">Contactar</a>
                 </div>
             </div>
         </div>

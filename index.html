@@ -25,9 +25,10 @@
                     Grupo Klustor
                 </a>
                 <div class="nav-links" data-aos="fade-left">
+                    <a href="index.html">Inicio</a>
                     <a href="servicios.html">Servicios</a>
                     <a href="soluciones.html">Soluciones</a>
-                    <a href="#contacto">Contacto</a>
+                    <a href="contacto.html">Contacto</a>
                 </div>
                 <div class="mobile-menu-toggle" id="mobile-menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -38,7 +39,7 @@
         <div class="mobile-menu" id="mobile-menu">
             <a href="servicios.html">Servicios</a>
             <a href="soluciones.html">Soluciones</a>
-            <a href="#contacto">Contacto</a>
+            <a href="contacto.html">Contacto</a>
         </div>
 
         <div class="hero-content container">
@@ -105,54 +106,152 @@
             </div>
         </section>
 
-        <section id="multicloud" class="section dark">
-            <div class="container">
-                <h2>Soluciones de Ingeniería de Datos y Plataformas Multicloud</h2>
-                <div class="pyramid-container">
-                    <div class="pyramid-wrapper">
-                        <div class="pyramid-item top" data-aos="fade-down">
-                            <div class="pyramid-content">
-                                <div class="pyramid-icon">
-                                    <i class="fas fa-cloud"></i>
-                                </div>
-                                <div class="pyramid-text">
-                                    <h3>Arquitecturas escalables</h3>
-                                    <p>Diseños robustos en múltiples plataformas</p>
-                                </div>
-                            </div>
-                            <div class="pyramid-line"></div>
+        <!-- Sección Multicloud -->
+        <section class="multicloud-section">
+            <div class="multicloud-container">
+                <div class="multicloud-header">
+                    <h2>Soluciones de Ingeniería de Datos y Plataformas Multicloud</h2>
+                </div>
+                <div class="solutions-grid">
+                    <div class="solution-card" data-aos="fade-up">
+                        <div class="solution-icon">
+                            <i class="fas fa-layer-group"></i>
                         </div>
-                        <div class="pyramid-item middle" data-aos="fade-down" data-aos-delay="100">
-                            <div class="pyramid-content">
-                                <div class="pyramid-icon">
-                                    <i class="fas fa-database"></i>
-                                </div>
-                                <div class="pyramid-text">
-                                    <h3>Gestión de grandes datos</h3>
-                                    <p>Optimización para volúmenes masivos</p>
-                                </div>
-                            </div>
-                            <div class="pyramid-line"></div>
+                        <div class="solution-content">
+                            <h3 class="solution-title">Diseños robustos en múltiples plataformas</h3>
+                            <p class="solution-description">Arquitecturas optimizadas para garantizar el máximo rendimiento y escalabilidad en diferentes entornos cloud.</p>
+                            <ul class="solution-features">
+                                <li class="solution-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    Alta disponibilidad 24/7
+                                </li>
+                                <li class="solution-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    Escalabilidad automática
+                                </li>
+                                <li class="solution-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    Redundancia geográfica
+                                </li>
+                            </ul>
                         </div>
-                        <div class="pyramid-item bottom" data-aos="fade-down" data-aos-delay="200">
-                            <div class="pyramid-content">
-                                <div class="pyramid-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div class="pyramid-text">
-                                    <h3>Seguridad avanzada</h3>
-                                    <p>Gobernanza y protección integral</p>
-                                </div>
-                            </div>
+                    </div>
+
+                    <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="solution-icon">
+                            <i class="fas fa-database"></i>
                         </div>
-                        <div class="pyramid-bg"></div>
+                        <div class="solution-content">
+                            <h3 class="solution-title">Optimización para volúmenes masivos</h3>
+                            <p class="solution-description">Soluciones diseñadas para manejar grandes volúmenes de datos con eficiencia y rapidez.</p>
+                            <ul class="solution-features">
+                                <li class="solution-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    Procesamiento distribuido
+                                </li>
+                                <li class="solution-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    Optimización de queries
+                                </li>
+                                <li class="solution-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    Almacenamiento inteligente
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="solution-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="solution-content">
+                            <h3 class="solution-title">Gobernanza y protección integral</h3>
+                            <p class="solution-description">Implementación de políticas de seguridad y cumplimiento normativo en todos los niveles.</p>
+                            <ul class="solution-features">
+                                <li class="solution-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    Encriptación end-to-end
+                                </li>
+                                <li class="solution-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    Control de acceso IAM
+                                </li>
+                                <li class="solution-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    Auditoría continua
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="cta-buttons center" data-aos="fade-up" data-aos-delay="300" style="margin-top: 2rem;">
-                    <a href="soluciones.html" class="btn btn-secondary">
-                        <i class="fas fa-lightbulb"></i>
-                        Ver casos de éxito
-                    </a>
+            </div>
+        </section>
+
+        <!-- Sección de características principales -->
+        <section class="feature-section">
+            <div class="feature-container">
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <h2 class="feature-title">
+                            <i class="fas fa-layer-group"></i>
+                            Diseños robustos en múltiples plataformas
+                        </h2>
+                        <p class="feature-description">
+                            Arquitecturas optimizadas para garantizar el máximo rendimiento y escalabilidad en diferentes entornos cloud.
+                        </p>
+                        <div class="feature-points">
+                            <div class="feature-point">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-point-content">
+                                    <h4 class="feature-point-title">Alta disponibilidad</h4>
+                                    <p class="feature-point-description">Sistemas diseñados para operar 24/7 con redundancia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <h2 class="feature-title">
+                            <i class="fas fa-database"></i>
+                            Optimización para volúmenes masivos
+                        </h2>
+                        <p class="feature-description">
+                            Soluciones diseñadas para manejar grandes volúmenes de datos con eficiencia y rapidez.
+                        </p>
+                        <div class="feature-points">
+                            <div class="feature-point">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <div class="feature-point-content">
+                                    <h4 class="feature-point-title">Alto rendimiento</h4>
+                                    <p class="feature-point-description">Procesamiento optimizado para grandes conjuntos de datos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <h2 class="feature-title">
+                            <i class="fas fa-shield-alt"></i>
+                            Gobernanza y protección integral
+                        </h2>
+                        <p class="feature-description">
+                            Implementación de políticas de seguridad y cumplimiento normativo en todos los niveles.
+                        </p>
+                        <div class="feature-points">
+                            <div class="feature-point">
+                                <i class="fas fa-lock"></i>
+                                <div class="feature-point-content">
+                                    <h4 class="feature-point-title">Seguridad avanzada</h4>
+                                    <p class="feature-point-description">Protección completa de datos e infraestructura</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -347,7 +446,7 @@
                 <div class="footer-section">
                     <h3>LOGRA TUS OBJETIVOS DE NEGOCIO</h3>
                     <p>Acércate con nuestros asesores para resolver las necesidades de tu empresa</p>
-                    <a href="#contacto" class="btn btn-outline">Contactar</a>
+                    <a href="contacto.html" class="btn btn-outline">Contactar</a>
                 </div>
 
                 <div class="footer-grid">

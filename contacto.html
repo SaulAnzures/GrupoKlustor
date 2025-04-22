@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Grupo Klustor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Estilos específicos para la página de contacto */
+        .contact-section {
+            padding: 6rem 0;
+            background: var(--primary-color); /* Fondo oscuro principal */
+        }
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .contact-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .contact-form-container {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 3rem;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow);
+        }
+        .contact-form-container h2 {
+            color: var(--highlight-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--highlight-color);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--highlight-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .submit-btn:hover {
+            background: var(--highlight-hover-color);
+        }
+        /* Responsive */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .contact-image {
+                text-align: center;
+                order: -1; /* Mover imagen arriba en móvil */
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .contact-form-container {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-cube"></i>
+                Grupo Klustor
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="soluciones.html">Soluciones</a>
+                <a href="contacto.html" class="active">Contacto</a> 
+            </div>
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="soluciones.html">Soluciones</a>
+        <a href="contacto.html" class="active">Contacto</a>
+    </div>
+
+    <main>
+        <section class="section contact-section">
+            <div class="container contact-container">
+                <div class="contact-form-container" data-aos="fade-right">
+                    <h2>Ponte en Contacto</h2>
+                    <form action="#" method="POST"> <!-- Cambia action="#" a tu endpoint de backend si tienes uno -->
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo Electrónico</label>
+                            <input type="email" id="correo" name="correo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono (Opcional)</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Tu Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn submit-btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+                <div class="contact-image" data-aos="fade-left">
+                    <img src="https://ik.imagekit.io/saintbelikin/Estrechar%20manos?updatedAt=1745294149323" alt="Manos estrechándose - Contacto Grupo Klustor">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <!-- Copiar el footer de index.html aquí si es necesario, o crear un footer común -->
+         <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LOGRA TUS OBJETIVOS DE NEGOCIO</h3>
+                    <p>Acércate con nuestros asesores para resolver las necesidades de tu empresa</p>
+                    <a href="contacto.html" class="btn btn-outline">Contactar</a> <!-- Actualizado -->
+                </div>
+                <div class="footer-grid">
+                     <!-- ... (resto del footer grid como en index.html) ... -->
+                     <div class="footer-col">
+                        <h4>Especialización</h4>
+                        <div class="expertise-box">
+                            <div class="expertise-item">
+                                <i class="fas fa-layer-group"></i>
+                                <span>Soluciones Integrales</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Seguridad Garantizada</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Soporte 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Redes Sociales</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Contacto</h4>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> +52 (81) 8123 4736</p>
+                            <p><i class="fas fa-phone"></i> +52 (81) 8333 7951</p>
+                            <p><i class="fab fa-whatsapp"></i> +52 (81) 3381 6399</p>
+                            <p><i class="fas fa-envelope"></i> info@klustor.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                 <!-- ... (resto del footer bottom como en index.html) ... -->
+                 <div class="technologies">
+                    <span>Microsoft Power BI</span>
+                    <span>Tableau</span>
+                    <span>Pentaho</span>
+                    <span>Report Portal</span>
+                    <span>Business Objects</span>
+                    <span>Capacitación</span>
+                    <span>Aplicaciones Móviles</span>
+                    <span>Aviso de Privacidad</span>
+                </div>
+                <p class="copyright">Grupo Klustor © 2025 / Derechos Reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Copiar script de particles.js si es necesario
+         particlesJS('particles-js',
+            { /* ... configuración de particles.js como en index.html ... */
+                "particles": {
+                    "number": {"value": 60,"density": {"enable": true,"value_area": 800}},
+                    "color": {"value": "#4834d4"}, /* Ajustar color si es necesario */
+                    "shape": {"type": "circle"},
+                    "opacity": {"value": 0.3,"random": true,"anim": {"enable": true,"speed": 1,"opacity_min": 0.1,"sync": false}},
+                    "size": {"value": 3,"random": true,"anim": {"enable": true,"speed": 2,"size_min": 0.1,"sync": false}},
+                    "line_linked": {"enable": true,"distance": 150,"color": "#686de0","opacity": 0.2,"width": 1}, /* Ajustar color si es necesario */
+                    "move": {"enable": true,"speed": 1,"direction": "none","random": true,"straight": false,"out_mode": "out","bounce": false,"attract": {"enable": true,"rotateX": 600,"rotateY": 1200}}
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {"onhover": {"enable": true,"mode": "bubble"},"onclick": {"enable": true,"mode": "push"},"resize": true},
+                    "modes": {"bubble": {"distance": 200,"size": 4,"duration": 2,"opacity": 0.4,"speed": 3},"push": {"particles_nb": 4}}
+                },
+                "retina_detect": true
+            }
+        );
+
+        // Código para el menú móvil (igual que en las otras páginas)
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+            });
+            
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
